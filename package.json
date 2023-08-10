@@ -1,0 +1,16 @@
+{
+  "name": "cipmedic_page",
+  "version": "2.0.4",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "reynrel tech",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "express-static-gzip": "^2.1.7"
+  }
+}

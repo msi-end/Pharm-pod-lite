@@ -1,0 +1,958 @@
+@import "https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap";
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --gray: gray;
+    --blue: #09f;
+    --primary-color: hsl(240, 100%, 20%);
+    --indicator: hsl(120, 60%, 50%);
+    --certified: hsl(180, 100%, 50%);
+    --wrong: hsl(0, 100%, 50%);
+    --gradient-3: linear-gradient(to bottom left, #039 0%, #09f 100%);
+    --gradient-2: linear-gradient(to bottom, red 0%, #900 100%);
+    --gradient-1: linear-gradient(to top right, #036 0%, #000 100%);
+    --gradient-0: linear-gradient(to bottom right, #00ff6e 0%, #6fc 100%);
+    --box-shadow-2: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    --box-shadow-1: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+    --box-shadow-0: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    --border-radius-1: 4px;
+    --border-radius-0: 50%;
+    --padding-1: 1rem;
+    --padding-2: 1.5rem;
+    --border-1: 1px solid rgba(0, 0, 0, 0.2);
+    --border-2: 1.5px solid rgba(0, 0, 0, 0.2);
+    --border-3: 1px solid #000
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Nunito', "Poppins", sans-serif
+}
+
+body {
+    background: #f2f2f2
+}
+
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+li {
+    list-style: none
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer
+}
+
+.flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.uil {
+    cursor: pointer
+}
+
+header {
+    box-shadow: var(--box-shadow-1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .5rem 3rem;
+    background: var(--gradient-1);
+    backdrop-filter: blur(10px);
+    z-index: 2
+}
+
+header h4 {
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase
+}
+
+header img {
+    width: 45px;
+    aspect-ratio: 1/1;
+    border-radius: 50%
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: var(--border-radius-1);
+    background: var(--gradient-3);
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    display: block;
+    flex-grow: 1;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 700
+}
+
+.btn:hover {
+    padding: 7px 15px
+}
+
+.btn i {
+    font-size: 18px
+}
+
+header .dot {
+    display: none
+}
+
+header .dot.active {
+    display: block;
+    position: absolute;
+    background: var(--indicator);
+    top: 5px;
+    right: 5px
+}
+
+header .butn {
+    display: none
+}
+
+#image-scroller {
+    position: relative;
+    margin-top: 3.5rem
+}
+
+#image-scroller img {
+    aspect-ratio: 4/1
+}
+
+#title-name {
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    text-transform: uppercase;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vw;
+    mix-blend-mode: overlay;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white)
+}
+
+.wigin {
+    width: 85%;
+    margin: 1.5rem auto
+}
+
+#main-section {
+    position: relative;
+    padding: var(--padding-2);
+    background: var(--white);
+    border-radius: var(--border-radius-1);
+    flex-wrap: wrap;
+    box-shadow: var(--box-shadow-1)
+}
+
+#main-section .main-title-section {
+    line-height: 1.8
+}
+
+.title {
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline;
+    color: var(--primary-color);
+    font-size: 18px
+}
+
+.weight {
+    font-weight: 700
+}
+
+#heading {
+    font-weight: 900;
+    font-size: 2vw
+}
+
+.main-title-section .in-fl {
+    display: inline-flex;
+    gap: 3px
+}
+
+#main-section .title span {
+    text-transform: capitalize
+}
+
+#title-stars {
+    margin-left: 1.5rem;
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: var(--border-radius-1)
+}
+
+#title-rating {
+    font-size: 14px
+}
+
+#title-rating,
+#title-stars {
+    font-weight: 600
+}
+
+#main-section .uil-check-circle {
+    color: var(--blue)
+}
+
+.main-title-button {
+    margin-top: 5px;
+    z-index: 1
+}
+
+.main-title-button .btn {
+    font-size: 16px
+}
+
+.main-title-button .btn:hover {
+    background: var(--black);
+    padding: 5px 10px
+}
+
+.main-timing-section .flexBox {
+    flex-grow: 1
+}
+
+#grid-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem
+}
+
+.first-section>main {
+    margin-top: .5rem;
+    margin-bottom: .5rem
+}
+
+.grid-items,
+:is(#review-section, .second-section) main {
+    padding: var(--padding-2) var(--padding-1);
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow-1);
+    width: 100%;
+    background: var(--white)
+}
+
+.horizontal-scroll {
+    width: 700px;
+    height: 120px;
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+    overflow-y: hidden
+}
+
+.active-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.avail-circle {
+    width: 80px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative
+}
+
+.image {
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.avail-circle img {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%
+}
+
+.avail-circle p.active {
+    color: var(--indicator)
+}
+
+.avail-circle .dot.active {
+    background: var(--gradient-0)
+}
+
+.avail-circle .image.active {
+    background: var(--gradient-0)
+}
+
+.avail-circle p.inactive {
+    color: var(--wrong)
+}
+
+.avail-circle .dot.inactive {
+    background: var(--gradient-2)
+}
+
+.avail-circle .image.inactive {
+    background: var(--gradient-2)
+}
+
+.dot {
+    background: var(--black);
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%
+}
+
+.title-heading {
+    text-transform: capitalize;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: .1rem
+}
+
+.small {
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    text-align: center
+}
+
+.tiny {
+    font-size: 13px
+}
+
+.tiny i {
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 0 3px
+}
+
+.select-doc-section select {
+    font-size: 14px;
+    padding: 5px;
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+    cursor: pointer
+}
+
+hr {
+    outline: var(--border-1)
+}
+
+.select-doc-section .flexBox {
+    margin-top: 1rem;
+    margin-bottom: 5px
+}
+
+.inner-doc-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.content-container-doc {
+    line-height: 1.8
+}
+
+.image-container-doc {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px
+}
+
+.inner-doc-container img {
+    border: var(--border-3);
+    border-radius: var(--border-radius-1);
+    width: 150px;
+    aspect-ratio: 1/1
+}
+
+#dname {
+    font-size: 19px;
+    font-weight: 700
+}
+
+.detailsText {
+    display: none
+}
+
+.detailsText--show {
+    display: block
+}
+
+.detailsMore-btn,
+.know {
+    display: inline;
+    font-weight: 700;
+    cursor: pointer
+}
+
+#aboutsum,
+.sarang {
+    font-size: 15px
+}
+
+.we-ra,
+.seon {
+    font-weight: 700
+}
+
+iframe {
+    width: 100%;
+    flex-grow: 1;
+    display: inline;
+    border: var(--border-2);
+    border-radius: var(--border-radius-1)
+}
+
+#bold {
+    display: block;
+    font-weight: 700;
+    font-size: 17px;
+    text-transform: capitalize
+}
+
+.second-section iframe {
+    height: 200px;
+    margin-top: .5rem
+}
+
+.second-section>main {
+    margin-bottom: 1rem;
+    margin-top: .5rem
+}
+
+.services-container {
+    position: relative;
+    height: 10rem;
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+    overflow-y: scroll
+}
+
+.service-list {
+    padding: 0 var(--padding-1)
+}
+
+.service-list li {
+    flex-grow: 1;
+    margin-top: .5rem;
+    margin-bottom: .5rem
+}
+
+.service-list .view {
+    text-decoration: underline
+}
+
+.article-outer li {
+    flex-grow: 1
+}
+
+.article-outer li a {
+    position: relative;
+    transition: 300ms ease
+}
+
+.article-outer li a.active::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: var(--black)
+}
+
+.article-inner-container {
+    margin-top: .5rem
+}
+
+.article-inner-container img {
+    border-radius: var(--border-radius-1);
+    border: var(--border-1);
+    width: 100%;
+    aspect-ratio: 16/9
+}
+
+#review-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem
+}
+
+#review-section .title {
+    display: block;
+    margin-bottom: .5rem
+}
+
+.first-rev-section button {
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 16px;
+    border: 1px solid var(--blue)
+}
+
+.first-rev-section button:hover {
+    background: var(--white);
+    color: var(--blue)
+}
+
+.first-ad {
+    position: relative;
+    margin-top: .8rem
+}
+
+#review-section img {
+    aspect-ratio: 16/9;
+    border-radius: var(--border-radius-1);
+    border: var(--border-1)
+}
+
+.first-ad span {
+    border: 1px solid var(--white);
+    padding: 0 3px;
+    border-radius: var(--border-radius-1);
+    font-size: 12px;
+    color: var(--white);
+    position: absolute;
+    right: 3%;
+    top: 5%
+}
+
+.second-rev-section .flexBox {
+    justify-content: flex-start;
+    gap: 2px
+}
+
+.second-rev-section .uis-star {
+    color: var(--blue)
+}
+
+.second-rev-section .review-inner-section {
+    height: 30rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: var(--padding-1) 0
+}
+
+#review {
+    margin-top: .5rem
+}
+
+#review p span {
+    font-weight: 700
+}
+
+#review-section-text {
+    margin-bottom: .5rem;
+    font-size: 15px
+}
+
+.posfix {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px)
+}
+
+.inner-posfix {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    width: 100%;
+    padding: var(--padding-2);
+    border-radius: var(--border-radius-1);
+    background: var(--gradient-1);
+    color: var(--white)
+}
+
+.form-section {
+    z-index: 5;
+    display: none;
+    transition: all 300ms ease
+}
+
+.form-container .title {
+    color: var(--white);
+    margin-bottom: .5rem;
+    display: block;
+    font-size: 22px;
+    text-align: center
+}
+
+.close-btn {
+    font-size: 28px;
+    padding: 0 10px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 4%;
+    right: 4%
+}
+
+.arrow-btn {
+    font-size: 28px;
+    padding: 0 4px;
+    font-weight: 700;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    display: none
+}
+
+.err-msg {
+    background: var(--white);
+    color: var(--wrong);
+    padding: 3px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    border-radius: var(--border-radius-1);
+    margin-bottom: .5rem
+}
+
+.input-box {
+    width: 100%;
+    position: relative
+}
+
+label {
+    font-size: 14px;
+    font-weight: 400
+}
+
+.form-container :is(input[type="text"], input[type="tel"], select, textarea) {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: .5rem;
+    border-radius: var(--border-radius-1);
+    font-size: 16px;
+    font-weight: 500
+}
+
+.form-container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: .5rem;
+    border-radius: var(--border-radius-1)
+}
+
+#avai {
+    font-size: 10px;
+    margin-left: 1rem;
+    text-decoration: underline
+}
+
+.form-container .flexBox {
+    justify-content: flex-start;
+    gap: 5px
+}
+
+.form-container .flexBox a {
+    color: var(--white);
+    text-decoration: underline
+}
+
+.book-btn {
+    width: 100%;
+    margin-top: .5rem;
+    padding: 8px;
+    border-radius: var(--border-radius-1);
+    background: var(--indicator);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer
+}
+
+.form-second {
+    display: none
+}
+
+.review-fill {
+    z-index: 6;
+    display: none
+}
+
+.review-fill-container .review-stars-fill {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse
+}
+
+.review-fill-container .review-stars-fill .uis-star {
+    font-size: 3rem;
+    color: var(--white);
+    transition: 300ms ease;
+    cursor: pointer
+}
+
+.review-fill-container .review-stars-fill input {
+    display: none
+}
+
+.review-stars-fill input:not(:checked)~.uis-star:hover,
+.review-stars-fill input:not(:checked)~.uis-star:hover~.uis-star {
+    color: var(--blue)
+}
+
+.review-stars-fill input:checked~.uis-star {
+    color: var(--blue)
+}
+
+.review-fill-container textarea {
+    width: 100%;
+    height: 300px;
+    padding: var(--padding-1);
+    font-size: 16px;
+    font-weight: 500;
+    resize: none;
+    border-radius: var(--border-radius-1)
+}
+
+.review-fill-container .title-heading {
+    color: var(--white);
+    margin-bottom: .5rem;
+    display: block;
+    font-size: 22px;
+    text-align: center
+}
+
+.review-form-end-section {
+    z-index: 7;
+    display: none;
+    backdrop-filter: brightness(0.1)
+}
+
+.review-form-end-container :is(input[type="text"], input[type="tel"]) {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: .5rem;
+    border-radius: var(--border-radius-1);
+    font-size: 16px;
+    font-weight: 500
+}
+
+.review-form-end-section .close-btn {
+    top: -10%
+}
+
+footer {
+    padding: 3rem;
+    background: var(--white);
+    border-radius: var(--border-radius-1);
+    border-bottom: var(--border-2)
+}
+
+footer main {
+    flex-wrap: wrap
+}
+
+footer main>div {
+    flex-grow: 1
+}
+
+.first-footer {
+    border-right: var(--border-3)
+}
+
+footer .title-heading {
+    display: block
+}
+
+footer i {
+    font-size: 25px;
+    line-height: 50px;
+    transition: all 100ms ease
+}
+
+footer ul {
+    margin-top: 1rem
+}
+
+footer ul li a {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-0);
+    display: block;
+    text-align: center;
+    box-shadow: var(--box-shadow-0);
+    transition: 300ms ease;
+    color: var(--white)
+}
+
+footer ul li:nth-child(1) a {
+    background: hsl(142, 70%, 49%)
+}
+
+footer ul li:nth-child(2) a {
+    background: hsl(340, 75%, 54%)
+}
+
+footer ul li:nth-child(3) a {
+    background: var(--blue)
+}
+
+footer ul li:nth-child(4) a {
+    background: var(--wrong)
+}
+
+footer ul li:nth-child(5) a {
+    background: var(--blue)
+}
+
+.copy {
+    padding: .5rem;
+    text-align: center
+}
+
+.copy a {
+    text-transform: uppercase;
+    font-weight: 700
+}
+
+@media (max-width: 580px) {
+    ::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+    header {
+        padding: 5px 1.5rem
+    }
+
+    .btn-1 span,
+    .btn-2,
+    .btn-app {
+        display: none
+    }
+
+    #call-now {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        border-radius: 50%
+    }
+
+    #call-now i {
+        font-size: 25px
+    }
+
+    #call-now span {
+        display: none;
+        transition: 300ms ease
+    }
+
+    #call-now span.active {
+        display: inline
+    }
+
+    #call-now.active {
+        border-radius: var(--border-radius-1)
+    }
+
+    #title-stars {
+        margin-left: 0
+    }
+
+    #image-scroller img {
+        aspect-ratio: 16/9
+    }
+
+    .main-title-section {
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2)
+    }
+
+    #heading {
+        font-size: 20px
+    }
+
+    #bookAppo {
+        padding: 8px
+    }
+
+    #grid-section,
+    #review-section {
+        grid-template-columns: 1fr
+    }
+
+    .select-doc-section .flexBox {
+        display: block
+    }
+
+    .select-doc-section select {
+        width: 100%
+    }
+
+    .inner-doc-container {
+        flex-direction: column-reverse;
+        align-items: unset
+    }
+
+    .video-content-desc {
+        flex-wrap: wrap
+    }
+
+    .horizontal-scroll {
+        width: 300px
+    }
+
+    .first-footer {
+        padding-bottom: var(--padding-1);
+        border-bottom: var(--border-2);
+        border-right: none
+    }
+}
