@@ -54,7 +54,6 @@ function dateFn(e) {
         let tdyVal = tdy.toLocaleDateString({ month: "2-digit", year: "numeric", day: "2-digit" })
         let odt = new Date(tdy.setDate(tdy.getDate() - parseInt(dtEm.dataset.min))).toLocaleDateString({ month: "2-digit", year: "numeric", day: "2-digit" });
         let ndt = new Date(tdy.setDate(tdy.getDate() + parseInt(dtEm.dataset.max) + parseInt(dtEm.dataset.min))).toLocaleDateString({ month: "2-digit", year: "numeric", day: "2-digit"});
-        console.log(dSplit(tdyVal, '/', false));
         dtEm.defaultValue = dSplit(tdyVal, '/', false); dtEm.min = dSplit(odt, '/', false); dtEm.max = dSplit(ndt, '/', false);
     }
 }dateFn('formDate');
@@ -67,4 +66,9 @@ function openReview(){
 //Review form 2nd part
 function openRevieweEnd(){
   document.querySelector(`.review-form-end-section`).style.display = `block`;
+}
+
+//ALERT CONTAINER
+function closeAlert(){
+  document.querySelector(`.alert-container`).style.display = `none`;
 }

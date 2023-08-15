@@ -8,15 +8,15 @@
   <!-- ===CSS=== -->
   <link rel="stylesheet" href="/static/css/main.css" />
   <!-- ==Icons CSS=== -->
-  <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css"> -->
-  <link rel="icon"  href="/static/static/img/logo.png" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+  <link rel="icon" href="/static/img/logo.png" />
 </head>
 
 <body>
   <header class="flexBox">
     <div class="logo flexBox">
-      <img  src="/static/img/logo.png" alt="logo" />
+      <img src="/static/img/logo.png" alt="logo" />
       <h4>breathe</h4>
     </div>
     <div class="header-button flexBox">
@@ -30,7 +30,7 @@
         <i class="uil uil-clipboard-notes"></i>
         <span>Book Appointment</span>
       </button>
-      <button class="btn btn-2">
+      <button class="btn btn-2" onclick="window.open('tel:+91 9864885196')">
         <i class="uil uil-phone"></i> <span>Call Now</span>
       </button>
     </div>
@@ -39,13 +39,13 @@
   <div id="image-scroller">
     <h2 id="title-name">breathe wellness centre</h2>
     <div class="carousel">
-      <img src="./static/img/slider/slider-1.jpg" alt="slider" />
+      <img src="/static/img/slider/slider-1.jpg" alt="slider" />
     </div>
     <div class="carousel">
-      <img src="./static/img/slider/slider-2.jpg" alt="slider" />
+      <img src="/static/img/slider/slider-2.jpg" alt="slider" />
     </div>
     <div class="carousel">
-      <img src="./static/img/slider/slider-3.jpg" alt="slider" />
+      <img src="/static/img/slider/slider-3.jpg" alt="slider" />
     </div>
   </div>
   <!-- ===IMAGE SECTION ENDS HERE=== -->
@@ -62,10 +62,10 @@
       </p>
       <p>
         <i class="uil uil-map-marker-plus"></i>
-        <a href="#">Samadar Patty, Near ADP bridge, Nagaon, Assam 782002</a>
+        <a href="https://goo.gl/maps/Eb65fbGEEBfviu7v7">Samadar Patty, Near ADP bridge, Nagaon, Assam 782002</a>
       </p>
       <p class="in-fl">
-        <span><i class="uil uil-check-circle"></i><span class="weight">10</span> Doctors</span>
+        <span><i class="uil uil-check-circle"></i><span class="weight">13</span> Doctors</span>
         <span><i class="uil uil-check-circle"></i><span class="weight">&#8377;350</span> at clinic </span>
         <span class="small">*minimum</span>
       </p>
@@ -73,13 +73,13 @@
         <button class="btn" id="bookAppo" onclick="openForm()">
           <i class="uil uil-clipboard-notes"></i>Book Appointment
         </button>
-        <button class="btn flexBox" id="call-now" onclick="window.open('tel:9999999999')">
+        <button class="btn flexBox" id="call-now" onclick="window.open('tel:+91 9864885196')">
           <i class="uil uil-phone"></i> <span>Call Now</span>
         </button>
       </div>
     </div>
     <div class="main-timing-section">
-      <p class="title">timings</p>
+      <p class="title">clinic timings</p>
       <div class="weekDays flexBox">
         <ul class="weight">
           <li>Sunday</li>
@@ -91,13 +91,13 @@
           <li>Saturday</li>
         </ul>
         <ul>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
-          <li>09:00 AM - 09:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
         </ul>
       </div>
     </div>
@@ -138,27 +138,31 @@
             <option value="1"> Dr. Ankur Bhattacharya </option>
             <option value="2">Dr. Bhaskar Jyoti Pegu </option>
             <option value="3">Dr. Rosely Timungpi</option>
-            <option value="4">Dr. H M Akand</option>
+            <option value="4">Dr. Husni Mubarak Akand</option>
             <option value="5"> Dr. Kalyan Borah </option>
             <option value="6">Dr. Robertson Timung</option>
             <option value="7">Dr. Ziaul Haque </option>
             <option value="8">Dr. Kamal Hassan </option>
             <option value="9">Dr. Aditya Gautam</option>
+            <option value="10">Dr. Abhishek Agarwal</option>
+            <!-- <option value="10">Dr. Asit Roy</option>
+            <option value="11">Dr. Subham Purkayastha</option>
+            <option value="12">Dr. Manoj Kumar Behra</option> -->
           </select>
         </div>
         <div class="inner-doc-container">
           <div class="content-container-doc">
             <p id="dname"></p>
             <p>
-              <i class="uil uil-user-md"></i>
-              <span id="dspec"></span>
-            </p>
-            <p>
               <i class="uil uil-university"></i>
               <span id="ddeg"></span>
             </p>
             <p>
-              <i class="uil uil-medkit"></i>
+              <i class="uil uil-user-md"></i>
+              <span id="dspec"></span>
+            </p>
+            <p>
+
               <span id="dexp"></span>
             </p>
             <p>
@@ -171,7 +175,7 @@
             </p>
           </div>
           <div class="image-container-doc">
-            <img src="/static/img/doctors/about-img.jpg" alt="doctor">
+            <img alt="doctor" id="doc-img">
             <p class="tiny">
               <i class="uil uil-award"></i>
               <span>Certification verified</span>
@@ -184,22 +188,22 @@
         <p class="title-heading">timings</p>
         <div class="weekDays flexBox">
           <ul>
-            <li>Sunday</li>
             <li>Monday</li>
             <li>Tuesday</li>
             <li>Wednesday</li>
             <li>Thursday</li>
             <li>Friday</li>
             <li>Saturday</li>
+            <li>Sunday</li>
           </ul>
           <ul>
-            <li class="doc-sun"></li>
             <li class="doc-mon"></li>
             <li class="doc-tue"></li>
             <li class="doc-wed"></li>
             <li class="doc-thu"></li>
             <li class="doc-fri"></li>
             <li class="doc-sat"></li>
+            <li class="doc-sun"></li>
           </ul>
         </div>
       </main>
@@ -214,15 +218,18 @@
       </main>
       <hr>
       <main class="video-doc-section">
-        <p class="title-heading">What the doctor has to say</p>
+        <p class="title-heading">Doctor's Instructions</p>
         <div class="video-content-desc flexBox" id="dvid">
-          <iframe src="https://www.youtube.com/embed/Yxl-kfl9MIg" title="YouTube video player" frameborder="0"
+          <iframe src="https://www.youtube.com/embed/GVRDGQhoEYQ" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-          <p class="sarang" id="sarang"><span id="bold">Lifestyle diseases</span>
-            NCDs such as cardiovascular diseases (CVD), stroke, diabetes and certain forms of cancer are heavily linked
-            to lifestyle choices, and hence, are often known as lifestyle diseases.
-            <a href="/p/health-tips" class="know">Know more&rarr;</a>
+          <p class="sarang" id="sarang"><span id="bold"> How to Optimize Female Hormone Health for Vitality &
+              Longevity</span>
+            For a woman in her teens who's already hit puberty, what sorts of biomarkers should those young women be
+            paying attention to? During teenage years, monitor: Cortisol,The ratio of estrogen and
+            progesterone
+            <a href="https://www.podcastrecap.org/dr-sara-gottfried-how-to-optimize-female-hormone-health-for-vitality-long-huberman-lab-podcast/"
+              class="know">Know more&rarr;</a>
           </p>
         </div>
       </main>
@@ -232,13 +239,13 @@
         <p class="title">location</p>
         <p>
           <i class="uil uil-map-marker-plus"></i>
-          <a href="#">
+          <a href="https://goo.gl/maps/Eb65fbGEEBfviu7v7">
             Samadar Patty, Near ADP bridge, Nagaon, Assam 782002
           </a>
         </p>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3581.976168816173!2d91.811786!3d26.13232!2m3!1f0!2f0!3f0!3!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDA3JzU2LjQiTiA5McKwNDgnNDIuNCJF!5e0!3m2!1sen!2sin!4v1678984234247!5m2!1sen!2sin"
-          style="border: 1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d626.3487267511205!2d92.67965696794312!3d26.349607333128336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374527aadae64e83%3A0x98393c4de46b48e5!2sBreathe%20Wellness%20Centre!5e0!3m2!1sen!2sin!4v1692010163986!5m2!1sen!2sin"
+          style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </main>
 
       <main class="services-section">
@@ -336,7 +343,7 @@
     </main>
   </footer>
   <main class="copy">
-    All rights reserved &nbsp;&nbsp;&nbsp;&nbsp&copy; <a href="#">Cipmedic</a> @2023
+    All rights reserved &nbsp;&nbsp;&nbsp;&nbsp&copy; <a href="https://cipmedic.com/">Cipmedic</a> @2023
   </main>
 
   <!-- =====FOOTER ENDS HERE======= -->
@@ -359,13 +366,13 @@
           </div>
           <div class="input-box">
             <label for="date">Date:</label>
-            <input id="formDate" type="date" data-min="0" data-max="1" name="date" required>
+            <input id="formDate" type="date" data-min="0" data-max="6" name="date" required>
           </div>
           <div class="input-box">
             <label for="additional-info">Additional Information (optional):</label>
             <input type="text" placeholder="Enter about any query" name="info" id="info">
           </div>
-          <button type="button" class="book-btn" onclick=" proceed_bej()">Select Doctors</button>
+          <button type="button" class="book-btn" onclick="proceed_bej()">Select Doctors</button>
         </div>
         <div class="form-second">
           <div class="input-box">
@@ -377,19 +384,24 @@
               <option value=" Dr. Ankur Bhattacharya "> Dr. Ankur Bhattacharya </option>
               <option value="Dr. Bhaskar Jyoti Pegu ">Dr. Bhaskar Jyoti Pegu </option>
               <option value="Dr. Rosely Timungpi ">Dr. Rosely Timungpi</option>
-              <option value="Dr. H M Akand ">Dr. H M Akand</option>
+              <option value="Dr. Md. Husni Mubarak Akand ">Dr. Md. Husni Mubarak Akand</option>
               <option value="Dr. Kalyan Borah "> Dr. Kalyan Borah </option>
               <option value="Dr. Robertson Timung">Dr. Robertson Timung</option>
               <option value="Dr. Ziaul Haque ">Dr. Ziaul Haque </option>
               <option value="Dr. Kamal Hassan ">Dr. Kamal Hassan </option>
               <option value="Dr. Aditya Gautam">Dr. Aditya Gautam</option>
+              <option value="Dr. Abhishek Agarwal">Dr. Abhishek Agarwal</option>
+              <!-- <option value="Dr. Asit Roy">Dr. Asit Roy</option>
+              <option value="Dr. Subham Purkayastha">Dr. Subham Purkayastha</option>
+              <option value="Dr. Manoj Kumar Behra">Dr. Manoj Kumar Behra</option> -->
+
             </select>
           </div>
           <div class="input-box flexBox">
             <input type="checkbox" name="checkMe" id="checkMe" checked required>
-            <p>I agree to the <a href="/p/terms-conditions">terms and condtions</a></p>
+            <p>I agree to the <a href="#">terms and condtions</a></p>
           </div>
-          <div class="input-box">
+          <div class="input-box flexBox">
             <button type="button" class="book-btn" onclick="fixApp()">Book Appointment</button>
           </div>
         </div>
@@ -441,10 +453,26 @@
     </main>
   </section>
 
-  <!-- ======REVIEW FORM END SECTION======= -->
+  <!-- ======REVIEW FORM END SECTION ends here======= -->
+
+  <section class="alert-container posfix">
+    <main class="alert-inner-container inner-posfix">
+      <div class="icon-uil">
+        <span class="uil uil-check-circle" id="singu"></span>
+        <span class="uil uil-times-circle" id="samoa"></span>
+      </div>
+      <h3 id="leuy">Appointment Confirmed</h3>
+      <p id="aneo">*Appointment slot is not available for this particular date</p>
+      <div class="flexBox">
+        <button class="btn" onclick="closeAlert()">okay</button>
+        <!-- <button class="btn brten">my appoinments</button> -->
+      </div>
+    </main>
+  </section>
+
+  <!-- ========ALERT CONTAINER ENDS HERE============ -->
 
   <!-- ===JAVASCRIPT== -->
-  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script defer src="/static/js/main.js"></script>
   <script defer src="/static/js/script.js"></script>
   <script defer src="/static/js/mainDoc.js"></script>
