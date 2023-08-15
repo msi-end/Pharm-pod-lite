@@ -366,13 +366,13 @@
           </div>
           <div class="input-box">
             <label for="date">Date:</label>
-            <input id="formDate" type="date" data-min="0" data-max="6" name="date" required>
+            <input id="formDate" type="date" onchange="userReq.CheckDoc()" data-min="0" data-max="6" name="date" required>
           </div>
           <div class="input-box">
             <label for="additional-info">Additional Information (optional):</label>
             <input type="text" placeholder="Enter about any query" name="info" id="info">
           </div>
-          <button type="button" class="book-btn" onclick="proceed_bej()">Select Doctors</button>
+          <button type="button" class="book-btn" onclick="proceed_bej(),userReq.CheckDoc()">Select Doctors</button>
         </div>
         <div class="form-second">
           <div class="input-box">
@@ -380,20 +380,20 @@
             <span id="avai">*Check availability</span>
             <select name="regnDoctor" id="regnDoctor" required>
               <option value="SelectDoctor">Select a Doctor</option>
-              <option value="Dr. Upasona Saharia ">Dr. Upasona Saharia </option>
+              <!-- <option value="Upasona Saharia ">Dr. Upasona Saharia </option>
               <option value=" Dr. Ankur Bhattacharya "> Dr. Ankur Bhattacharya </option>
-              <option value="Dr. Bhaskar Jyoti Pegu ">Dr. Bhaskar Jyoti Pegu </option>
-              <option value="Dr. Rosely Timungpi ">Dr. Rosely Timungpi</option>
-              <option value="Dr. Md. Husni Mubarak Akand ">Dr. Md. Husni Mubarak Akand</option>
-              <option value="Dr. Kalyan Borah "> Dr. Kalyan Borah </option>
-              <option value="Dr. Robertson Timung">Dr. Robertson Timung</option>
-              <option value="Dr. Ziaul Haque ">Dr. Ziaul Haque </option>
-              <option value="Dr. Kamal Hassan ">Dr. Kamal Hassan </option>
-              <option value="Dr. Aditya Gautam">Dr. Aditya Gautam</option>
-              <option value="Dr. Abhishek Agarwal">Dr. Abhishek Agarwal</option>
-              <!-- <option value="Dr. Asit Roy">Dr. Asit Roy</option>
-              <option value="Dr. Subham Purkayastha">Dr. Subham Purkayastha</option>
-              <option value="Dr. Manoj Kumar Behra">Dr. Manoj Kumar Behra</option> -->
+              <option value="Bhaskar Jyoti Pegu ">Dr. Bhaskar Jyoti Pegu </option>
+              <option value="Rosely Timungpi ">Dr. Rosely Timungpi</option>
+              <option value="Md. Husni Mubarak Akand ">Dr. Md. Husni Mubarak Akand</option>
+              <option value="Kalyan Borah "> Dr. Kalyan Borah </option>
+              <option value="Robertson Timung">Dr. Robertson Timung</option>
+              <option value="Ziaul Haque ">Dr. Ziaul Haque </option>
+              <option value="Kamal Hassan ">Dr. Kamal Hassan </option>
+              <option value="Aditya Gautam">Dr. Aditya Gautam</option>
+              <option value="Abhishek Agarwal">Dr. Abhishek Agarwal</option> -->
+              <!-- <option value="Asit Roy">Dr. Asit Roy</option>
+              <option value="Subham Purkayastha">Dr. Subham Purkayastha</option>
+              <option value="Manoj Kumar Behra">Dr. Manoj Kumar Behra</option> -->
 
             </select>
           </div>
