@@ -309,7 +309,7 @@ header .butn {
     border-radius: 50%
 }
 
-.avail-circle p.active {
+.avail-circle .swal.active {
     color: var(--indicator)
 }
 
@@ -321,7 +321,7 @@ header .butn {
     background: var(--gradient-0)
 }
 
-.avail-circle p.inactive {
+.avail-circle .swal.inactive {
     color: var(--wrong)
 }
 

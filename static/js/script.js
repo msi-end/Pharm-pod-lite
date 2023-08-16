@@ -1,13 +1,13 @@
+
 async function FETchData(link) {
-  let res = await fetch(link);
+  let res = await fetch(`${link}`);
   return await res.json();
 
 }
-const APImain = 'http://localhost:8000';
+const APImain = 'https://cipmedic.com';
 const userName = 'BreatheWellness';
 async function displayDataWithRateandRev() {
   let dataWithRevRat = await FETchData(`${APImain}/apiV2/fn/BreatheWellness`)
-  console.log(dataWithRevRat)
   dataWithRevRat.data.forEach(ell => {
     let clinic = document.getElementById('heading').childNodes;
     clinic[1].innerHTML = `${ell.star.toFixed(1)}&#9733;`;
@@ -16,12 +16,11 @@ async function displayDataWithRateandRev() {
 }
 async function DataOfRevrat() {
   let revRat = await FETchData(`${APImain}/apiV2/revv/BreatheWellness`);
-
   let s = 1;
   let box = document.getElementById('review')
   revRat.data.forEach((el) => {
 
-    let str4 = ' <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label>  <label for="4" class="uis uis-star"></label>'
+    let str4 = '<label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label>  <label for="4" class="uis uis-star"></label>'
     let html = `<p><i class="uil uil-user-square"></i>
       <span>${el.userName}</span>
     </p>
@@ -47,6 +46,7 @@ function closeReviewfill() {
 }
 
 //3rd part ===============submitting star and review-----------------------
+
 const star = document.querySelectorAll("#star");
 let a;
 star.forEach((el) => { el.addEventListener("click", () => { a = el.dataset.val; }) })
@@ -189,6 +189,40 @@ function wrongAlert() {
   document.querySelector(`#leuy`).textContent = `Appointment is not Confirmed`;
   document.querySelector(`#aneo`).style.display = 'block';
 }
+
+function d______T(param) {
+  let datewrongformat = param.split('/');
+  const correctDate = `${datewrongformat[1]}/${datewrongformat[0]}/${datewrongformat[2]}`
+  const paramDate = new Date(correctDate).toLocaleDateString();
+  if (paramDate === new Date().toLocaleDateString()) {
+    console.log('Matching with today date');
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function availDoc() {
+  ReqHandler.GET(ReqURI.GetDoc + 'BreatheWellness').then((data) => {
+    data.data.forEach((el) => {
+      let d = d______T(el.day);
+      console.log(el.d_name.split(' '));
+      let html = `<div class="avail-circle">
+        <div class="image ${d && el.status ?'active':'inactive'}">
+          <img src="/static/img/doctors/${el.d_name.split(' ')[0].toLowerCase()}.jpg" alt="Doctor" class="" />
+        </div>
+        <p class="small">Dr ${el.d_name}</p>
+        <p class="small">
+          <span class="dot ${d && el.status ?'active':'inactive'}"></span><span class="swal ${d && el.status ? 'active':'inactive'}"> ${d ?'Available':'Not available'}</span>
+        </p>
+      </div>`
+      document.querySelector('.active-container').insertAdjacentHTML('afterbegin', html)
+    });
+  })
+}
+
+availDoc();
+
 
 
 
