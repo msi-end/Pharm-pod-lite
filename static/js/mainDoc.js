@@ -65,7 +65,7 @@ const doctor5 = {
  Dr. H M Akand is a proficient General Surgeon, holding an MBBS and an MS degree. Fluent in Assamese, Hindi, and English, he ensures clear and effective communication with a diverse patient base. With 9 years of experience, Dr. Akand brings a wealth of surgical expertise to Breathe Wellness Centre.`,
     blog: `His commitment to patient care and well-being is evident through his dedication to providing comprehensive and individualized treatment. Dr. H M Akand's linguistic abilities play a crucial role in establishing trust and facilitating open discussions with patients, allowing for a better understanding of their surgical options and concerns.
 
- At Breathe Wellness Centre, Dr. Akand's skills and compassionate approach contribute to the center's commitment to holistic healthcare. His presence underscores the importance of patient-centric care and expertise, making him an invaluable asset in the field of general surgery.`, Sunday: ` - `, Monday: `05:30 PM`, Tuesday: `03:00 PM`, Wednesday: `03:00 PM`, Thursday: `03:00 PM`, Friday: `03:00 PM`, Saturday: `03:00 PM`,image: `/static/img/doctors/husni.jpg`
+ At Breathe Wellness Centre, Dr. Akand's skills and compassionate approach contribute to the center's commitment to holistic healthcare. His presence underscores the importance of patient-centric care and expertise, making him an invaluable asset in the field of general surgery.`, Sunday: ` - `, Monday: `05:30 PM`, Tuesday: `03:00 PM`, Wednesday: `03:00 PM`, Thursday: `03:00 PM`, Friday: `03:00 PM`, Saturday: `03:00 PM`,image: `/static/img/doctors/md.jpg`
 };
 
 const doctor6 = {
