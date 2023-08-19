@@ -131,11 +131,6 @@ header .dot.active {
     top: 5px;
     right: 5px
 }
-
-header .butn {
-    display: none
-}
-
 #image-scroller {
     position: relative;
     margin-top: 3.5rem
@@ -832,8 +827,53 @@ label {
     font-size: 16px;
     padding: 10px;
     margin-top: 0.5rem;
+}/* ----------------------------------------
+        CUSTOMER APPOINTMENT SECTION
+------------------------------------------- */
+.customer-app-container{
+    display: none;
+    z-index: 12;
 }
-/* ----Foooter--- */
+.app-container{
+    height: 100vh;
+    overflow-y: scroll;
+}
+.customer-app-container .close-btn{
+    top: 1%;
+}
+.customer-app-container .title-heading{
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.customer-app-container .box{
+    background: var(--white);
+    color: var(--primary-color);
+    padding: var(--padding-1);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+.customer-app-container .box p{
+    font-weight: 600;
+}
+.customer-app-container .dr-name{
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: 900;
+}.customer-app-container .add-info span{
+    color: var(--blue);
+}
+.customer-app-container .stat{
+    color: var(--indicator);
+    text-transform: uppercase;
+}
+.customer-app-container .stat.active{
+    color: var(--wrong);
+}
+/* -----------------------
+        FOOTER
+----------------------- */
 footer {
     padding: 3rem;
     background: var(--white);
