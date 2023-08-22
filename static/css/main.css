@@ -858,7 +858,7 @@ label {
     font-weight: 600;
 }
 .customer-app-container .dr-name{
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: var(--black);
     font-weight: 900;
 }.customer-app-container .add-info span{
