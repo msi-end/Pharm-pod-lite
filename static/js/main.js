@@ -72,3 +72,11 @@ function openRevieweEnd(){
 function closeAlert(){
   document.querySelector(`.alert-container`).style.display = `none`;
 }
+//MY APPOINTMENTS
+function openmyapp(){
+  document.querySelector(`.customer-app-container`).style.display = `block`;
+}
+
+function closemyapp(){
+  document.querySelector(`.customer-app-container`).style.display = 'none';
+}
