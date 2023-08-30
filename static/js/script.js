@@ -27,15 +27,21 @@ async function displayDataWithRateandRev() {
 }
 async function DataOfRevrat() {
   let revRat = await ReqHandler.GET(ReqURI.GetRevrat + userName);
-  let s = 1;
+  let s = 4;
   let box = document.getElementById('review')
+  console.log(revRat.data)
   revRat.data.forEach((el) => {
+    let str = '<label for="4" class="uis uis-star"></label> '
     let str4 = '<label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label>  <label for="4" class="uis uis-star"></label>'
     let html = `<p><i class="uil uil-user-square"></i>
       <span>${el.userName}</span>
     </p>
     <div class="flexBox">
-    ${str4}
+    ${s===1 ? str : ''}
+    ${s===2 ? `${str}${str}` : ''}
+    ${s===3 ? `${str}${str}${str}` : ''}
+    ${s===4 ? `${str}${str}${str}${str}` : ''}
+    ${s===5 ? `${str}${str}${str}${str}${str}` : ''}
     </div>
     <p id="review-section-text">${el.review}</p>
     <hr>`
