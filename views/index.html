@@ -20,7 +20,7 @@
       <h4>breathe</h4>
     </div>
     <div class="header-button flexBox">
-      <button class="btn butn">
+      <button class="btn butn" onclick="openmyapp()">
         <i class="uil uil-bag"></i>
         <span class="btn-app">My Appointments</span>
         <span class="dot active"></span>
@@ -366,7 +366,8 @@
           </div>
           <div class="input-box">
             <label for="date">Date:</label>
-            <input id="formDate" type="date" onchange="userReq.CheckDoc()" data-min="0" data-max="6" name="date" required>
+            <input id="formDate" type="date" onchange="userReq.CheckDoc()" data-min="0" data-max="6" name="date"
+              required>
           </div>
           <div class="input-box">
             <label for="additional-info">Additional Information (optional):</label>
@@ -465,13 +466,31 @@
       <p id="aneo">*Appointment slot is not available for this particular date</p>
       <div class="flexBox">
         <button class="btn" onclick="closeAlert()">okay</button>
-        <!-- <button class="btn brten">my appoinments</button> -->
+        <button class="btn brten" onclick="openmyapp()">my appoinments</button>
       </div>
     </main>
   </section>
 
   <!-- ========ALERT CONTAINER ENDS HERE============ -->
 
+  <section class=" customer-app-container posfix">
+    <main class="app-container inner-posfix">
+      <p class="title-heading">My appointments</p>
+      <p class="err-msg"></p>
+      <button class="close-btn" onclick="closemyapp()">&times;</button>
+      <div class="box">
+        <h3 class="name">Kankan Jyoti Nath</h3>
+        <p class="number">6002649802</p>
+        <p class="dr-name">Dr Md Husni Mubarak Akand</p>
+        <p class="add-info"><span>Add. Info: </span>Haga Tan hoise</p>
+        <p class="app-status">Status: <span class="stat">Confirmed</span></p>
+        <p class="app-date">Date: <span>19/09/2023</span></p>
+        <!-- ---- active class in stat makes it red-----  -->
+      </div>
+    </main>
+  </section>
+
+  <!-- =============CUSTOMER APP CONTAINER ENDS HERE============== -->
   <!-- ===JAVASCRIPT== -->
   <script defer src="/static/js/main.js"></script>
   <script defer src="/static/js/script.js"></script>
