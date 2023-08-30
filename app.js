@@ -25,7 +25,7 @@ app.use(
     })
 )
 
-
+//new updates
 
 app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, '/views/index.html'))
