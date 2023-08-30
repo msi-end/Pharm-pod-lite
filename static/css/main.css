@@ -715,9 +715,27 @@ label {
     font-size: 15px;
     cursor: pointer
 }
+#loader {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 7px solid #ddd;
+    border-top-color: #333;
+    animation: rotate 1s infinite;
+    z-index: 7;
+    left: 40%;
+    display: none;
+}
 
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .form-second {
-    display: none
+    display: none;
+    position: relative;
 }
 
 .review-fill {
