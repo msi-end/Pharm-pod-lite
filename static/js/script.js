@@ -16,9 +16,9 @@ let ReqHandler = {
     }); return response.json();
   }
 }
-let ReqURI = { FormSet: APImain + '/apiV2/crt?user=', GetDoc: `${APImain}/apiV2/getDoc?user=`, GetRevColl: APImain + '/apiV2/fn/', GetRevrat: APImain + '/apiV2/revv/', POSTRev: APImain + '/apiV2/rv'}
+let ReqURI = { FormSet: APImain + '/apiV2/crt?user=', GetDoc: `${APImain}/apiV2/getDoc?user=`, GetRevColl: APImain + '/apiV2/fn/', GetRevrat: APImain + '/apiV2/revv/', POSTRev: APImain + '/apiV2/rv' }
 async function displayDataWithRateandRev() {
-  let dataWithRevRat = await ReqHandler.GET(ReqURI.GetRevColl + userName )
+  let dataWithRevRat = await ReqHandler.GET(ReqURI.GetRevColl + userName)
   dataWithRevRat.data.forEach(ell => {
     let clinic = document.getElementById('heading').childNodes;
     clinic[1].innerHTML = `${ell.star.toFixed(1)}&#9733;`;
@@ -37,11 +37,11 @@ async function DataOfRevrat() {
       <span>${el.userName}</span>
     </p>
     <div class="flexBox">
-    ${s===1 ? str : ''}
-    ${s===2 ? `${str}${str}` : ''}
-    ${s===3 ? `${str}${str}${str}` : ''}
-    ${s===4 ? `${str}${str}${str}${str}` : ''}
-    ${s===5 ? `${str}${str}${str}${str}${str}` : ''}
+    ${s === 1 ? str : ''}
+    ${s === 2 ? `${str}${str}` : ''}
+    ${s === 3 ? `${str}${str}${str}` : ''}
+    ${s === 4 ? `${str}${str}${str}${str}` : ''}
+    ${s === 5 ? `${str}${str}${str}${str}${str}` : ''}
     </div>
     <p id="review-section-text">${el.review}</p>
     <hr>`
@@ -89,14 +89,14 @@ let valid = {
     pat1: /^[A-Za-z. ]+$/, pat3: /^[A-Za-z.@0-9 ]+$/, pat4: /[@]/g, pat5: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, pat6: /^\+?[1-9][0-9]{9}$/
   },
   regTextBox: function (val) {
-    if (val === '' || this.pat.pat3.test(val)){ return true;}else{return 'Character are invalid!'}
+    if (val === '' || this.pat.pat3.test(val)) { return true; } else { return 'Character are invalid!' }
   }, regEmail: function (val) {
     let v = val.replace(/\s/g, "")
-    if (this.pat.pat5.test(v)){return true; }else{return 'Invalid Email';}
+    if (this.pat.pat5.test(v)) { return true; } else { return 'Invalid Email'; }
   }, regNumber: function (val) {
-    if (this.pat.pat6.test(val)){return true;}else{return 'Invalid Number'}
+    if (this.pat.pat6.test(val)) { return true; } else { return 'Invalid Number' }
   }, regName: function (val) {
-    if (this.pat.pat1.test(val)){return true;}else{return 'Invalid Name'}
+    if (this.pat.pat1.test(val)) { return true; } else { return 'Invalid Name' }
   }, regReq: function (val) {
     if (val === '') { return false; } else { return true }
   },
@@ -131,8 +131,8 @@ function dSplit(val, p, t) { let [d, m, y] = val.split(p); return t ? `${y}/${m}
 
 const userReq = {
   FormSet: function (data) {
-    ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((data) => {
-      if (data.status) { correctAlert(); } else { wrongAlert(); }
+    ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
+      if (dat.status) { correctAlert(); myappointment(data) } else { wrongAlert(); }
     })
   },
   CheckDoc: function () {
@@ -142,7 +142,7 @@ const userReq = {
       docCtn.innerHTML = '';
       if (e) {
         for (let i = 0; i < e.data.length; i++) {
-          console.log(e.data[i].status !== 'false' && e.data[i].day !== input_date);
+          // console.log(e.data[i].status !== 'false' && e.data[i].day !== input_date);
           if (e.data[i].status !== 'false') {
             docCtn.innerHTML += `<option value="${e.data[i].d_name}">Dr. ${e.data[i].d_name}</option>`
           } else if (e.data[i].status == 'false' && e.data[i].day !== input_date) {
@@ -188,7 +188,8 @@ function d______T(param) {
   const paramDate = new Date(correctDate).toLocaleDateString();
   if (paramDate === new Date().toLocaleDateString()) {
     console.log('Matching with today date');
-    return true;} else {return false;}
+    return true;
+  } else { return false; }
 }
 
 function availDoc() {
@@ -206,7 +207,7 @@ function availDoc() {
         <span class="dot active"></span><span class="swal active">Available</span>
       </p>
     </div>`;
-    let htmlinactive = `<div class="avail-circle">
+      let htmlinactive = `<div class="avail-circle">
     <div class="image inactive">
       <img src="/static/img/doctors/${el.d_name.split(' ')[0].toLowerCase()}.jpg" alt="Doctor" class="" />
     </div>
@@ -215,12 +216,55 @@ function availDoc() {
       <span class="dot inactive"></span><span class="swal inactive">Not Available</span>
     </p>
   </div>`
-     if (d) {if (el.status == 'true') {container.innerHTML += htmlactive ;}else{container.innerHTML += htmlinactive;}
-     }else{container.innerHTML += htmlactive ;}
+      if (d) {
+        if (el.status == 'true') { container.innerHTML += htmlactive; } else { container.innerHTML += htmlinactive; }
+      } else { container.innerHTML += htmlactive; }
     });
   })
 }
 setTimeout(availDoc, 1000)
+
+function myappointment(data) {
+  if (localStorage.getItem('myappointment') === null) {
+    localStorage.setItem('myappointment', JSON.stringify({app1: data}));
+    let app = JSON.parse(localStorage.getItem('myappointment'));
+    renderAppo(app);
+  } else {
+    let app = JSON.parse(localStorage.getItem('myappointment'));
+    let newapp = `app${Object.keys(app).length + 1}`;
+    // let appo = JSON.parse(app, (key, value) => {return value;})
+    app[newapp] = data;
+    localStorage.setItem('myappointment', JSON.stringify(app));
+    renderAppo(app);
+  }
+}
+
+let myapp = {name: "konijio", phno: '90', dr: 'Dr Md Husni Mubarak Akand', date: '19/09/2023', status: 'Confirmed', addinfo: 'xyz'};
+
+// myappointment(myapp);
+
+function renderAppo(info) {
+  for (const key in info) {
+    if (info.hasOwnProperty(key)) {
+      value = info[key];
+      console.log(value);
+      let html = `<div class="box">
+      <h3 class="name">${value.name}</h3>
+      <p class="number">${value.number}</p>
+      <p class="dr-name">${value.doctor}</p>
+      <p class="add-info"><span>Add. Info: </span>${value.otherInfo}</p>
+      <p class="app-status">Status: <span class="stat">Confirmed</span></p>
+      <p class="app-date">Date: <span>${value.date}</span></p>
+      <!-- ---- active class in stat makes it red-----  -->
+    </div>`
+    document.getElementById('my-appo').innerHTML += html; 
+    }
+  }
+}
+
+
+
+
 
 
 
