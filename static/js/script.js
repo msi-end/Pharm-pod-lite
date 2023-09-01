@@ -144,6 +144,7 @@ const userReq = {
     })
   },
   CheckDoc: function () {
+    document.querySelector(`#loader`).style.display = `block`;
     let input_date = dSplit(document.getElementById('formDate').value, '-', true);
     ReqHandler.GET(ReqURI.GetDoc + 'BreatheWellness').then((e) => {
       let docCtn = document.getElementById('regnDoctor')
@@ -157,9 +158,12 @@ const userReq = {
             docCtn.innerHTML += `<option value="${e.data[i].d_name}">Dr. ${e.data[i].d_name}</option>`
           }
         }
-
+        document.querySelector(`#loader`).style.display = `none`;
+        
       } else { console.log('Get doc ,() not working') }
     })
+    
+
   }
 }
 
