@@ -1,13 +1,24 @@
-async function FETchData(link) {
-  let res = await fetch(link);
-  return await res.json();
-
-}
-const APImain = 'http://localhost:8000';
+const APImain = 'https://cipmedic.com';
 const userName = 'BreatheWellness';
+let ReqHandler = {
+  GET: async function (url) {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json; charset=UTF-8", }
+    }); return response.json();
+  },
+  POST: async function (url, data) {
+    console.log(url)
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=UTF-8", },
+      body: JSON.stringify(data)
+    }); return response.json();
+  }
+}
+let ReqURI = { FormSet: APImain + '/apiV2/crt?user=', GetDoc: `${APImain}/apiV2/getDoc?user=`, GetRevColl: APImain + '/apiV2/fn/', GetRevrat: APImain + '/apiV2/revv/', POSTRev: APImain + '/apiV2/rv' }
 async function displayDataWithRateandRev() {
-  let dataWithRevRat = await FETchData(`${APImain}/apiV2/fn/BreatheWellness`)
-  console.log(dataWithRevRat)
+  let dataWithRevRat = await ReqHandler.GET(ReqURI.GetRevColl + userName)
   dataWithRevRat.data.forEach(ell => {
     let clinic = document.getElementById('heading').childNodes;
     clinic[1].innerHTML = `${ell.star.toFixed(1)}&#9733;`;
@@ -15,18 +26,22 @@ async function displayDataWithRateandRev() {
   })
 }
 async function DataOfRevrat() {
-  let revRat = await FETchData(`${APImain}/apiV2/revv/BreatheWellness`);
-
-  let s = 1;
+  let revRat = await ReqHandler.GET(ReqURI.GetRevrat + userName);
+  let s = 4;
   let box = document.getElementById('review')
+  console.log(revRat.data)
   revRat.data.forEach((el) => {
-
-    let str4 = ' <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label>  <label for="4" class="uis uis-star"></label>'
+    let str = '<label for="4" class="uis uis-star"></label> '
+    let str4 = '<label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label> <label for="4" class="uis uis-star"></label>  <label for="4" class="uis uis-star"></label>'
     let html = `<p><i class="uil uil-user-square"></i>
       <span>${el.userName}</span>
     </p>
     <div class="flexBox">
-    ${str4}
+    ${s === 1 ? str : ''}
+    ${s === 2 ? `${str}${str}` : ''}
+    ${s === 3 ? `${str}${str}${str}` : ''}
+    ${s === 4 ? `${str}${str}${str}${str}` : ''}
+    ${s === 5 ? `${str}${str}${str}${str}${str}` : ''}
     </div>
     <p id="review-section-text">${el.review}</p>
     <hr>`
@@ -47,6 +62,7 @@ function closeReviewfill() {
 }
 
 //3rd part ===============submitting star and review-----------------------
+
 const star = document.querySelectorAll("#star");
 let a;
 star.forEach((el) => { el.addEventListener("click", () => { a = el.dataset.val; }) })
@@ -60,17 +76,12 @@ async function getRatePoint() {
   if (validationRes.nValid === true && validationRes.eValid === true) {
     closeReviewfill()
     closeReviewEnd()
-    let valu = { idNum: 'BreatheWellness', rating: a, review: review, u_name: name, mail: email_id };
-    console.log(valu)
-    const SendRatRev = await fetch(`${APImain}/apiV2/rv`, { method: 'POST', body: JSON.stringify(valu), headers: { 'Content-Type': 'application/json' } });
-    const result = await SendRatRev.json();
-    console.log(result)
-    Obj.flashMsg(result.msg, true);
+    const valu = { idNum: 'BreatheWellness', rating: a, review: review, u_name: name, mail: email_id };
+    await ReqHandler.POST(ReqURI.POSTRev, valu);
+    // console.log(SendRatRev)
   } else { document.getElementById('err-Msg').innerHTML = 'Name and Email is required properly!' }
 }
 submitReview.addEventListener('click', getRatePoint);
-
-
 
 //validation form--------------------------------
 let valid = {
@@ -118,29 +129,10 @@ let doc = document.getElementsByClassName('form-first')[0].children;
 // Date Manupulations 
 function dSplit(val, p, t) { let [d, m, y] = val.split(p); return t ? `${y}/${m}/${d}` : `${y}-${m}-${d}` }
 
-
-/// Request handler 
-let ReqURI = { FormSet: APImain + '/apiV2/crt?user=', GetDoc: `${APImain}/apiV2/getDoc?user=` }
-let ReqHandler = {
-  GET: async function (url) {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: { "Content-Type": "application/json; charset=UTF-8", }
-    }); return response.json();
-  },
-  POST: async function (url, data) {
-    console.log(url)
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=UTF-8", },
-      body: JSON.stringify(data)
-    }); return response.json();
-  }
-}
 const userReq = {
   FormSet: function (data) {
-    ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((data) => {
-      if (data.status) { correctAlert(); } else { wrongAlert(); }
+    ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
+      if (dat.status) { correctAlert(); myappointment(data) } else { wrongAlert(); }
     })
   },
   CheckDoc: function () {
@@ -151,7 +143,7 @@ const userReq = {
       docCtn.innerHTML = '';
       if (e) {
         for (let i = 0; i < e.data.length; i++) {
-          console.log(e.data[i].status !== 'false' && e.data[i].day !== input_date);
+          // console.log(e.data[i].status !== 'false' && e.data[i].day !== input_date);
           if (e.data[i].status !== 'false') {
             docCtn.innerHTML += `<option value="${e.data[i].d_name}">Dr. ${e.data[i].d_name}</option>`
           } else if (e.data[i].status == 'false' && e.data[i].day !== input_date) {
@@ -181,18 +173,106 @@ function fixApp() {
   // console.log(dataform.childNodes[5].value);
   userReq.FormSet(data);
 }
-
-// Confirmation msg 
 function correctAlert() {
   document.querySelector(`.alert-container`).style.display = 'block';
   document.querySelector(`#samoa`).style.display = 'none';
+  document.querySelector(`.form-section`).style.display = `none`;
 }
 function wrongAlert() {
   document.querySelector(`.alert-container`).style.display = 'block';
   document.querySelector(`#singu`).style.display = 'none';
   document.querySelector(`#leuy`).textContent = `Appointment is not Confirmed`;
   document.querySelector(`#aneo`).style.display = 'block';
+  document.querySelector(`.form-section`).style.display = `none`;
 }
+
+function d______T(param) {
+  let datewrongformat = param.split('/');
+  const correctDate = `${datewrongformat[1]}/${datewrongformat[0]}/${datewrongformat[2]}`
+  const paramDate = new Date(correctDate).toLocaleDateString();
+  if (paramDate === new Date().toLocaleDateString()) {
+    console.log('Matching with today date');
+    return true;
+  } else { return false; }
+}
+
+function availDoc() {
+  const container = document.querySelector('.active-container');
+  ReqHandler.GET(ReqURI.GetDoc + 'BreatheWellness').then((data) => {
+    // console.log(data.data)
+    data.data.forEach((el) => {
+      let d = d______T(el.day);
+      let htmlactive = `<div class="avail-circle">
+      <div class="image active">
+        <img src="/static/img/doctors/${el.d_name.split(' ')[0].toLowerCase()}.jpg" alt="Doctor" class="" />
+      </div>
+      <p class="small">Dr ${el.d_name}</p>
+      <p class="small">
+        <span class="dot active"></span><span class="swal active">Available</span>
+      </p>
+    </div>`;
+      let htmlinactive = `<div class="avail-circle">
+    <div class="image inactive">
+      <img src="/static/img/doctors/${el.d_name.split(' ')[0].toLowerCase()}.jpg" alt="Doctor" class="" />
+    </div>
+    <p class="small">Dr ${el.d_name}</p>
+    <p class="small">
+      <span class="dot inactive"></span><span class="swal inactive">Not Available</span>
+    </p>
+  </div>`
+      if (d) {
+        if (el.status == 'true') { container.innerHTML += htmlactive; } else { container.innerHTML += htmlinactive; }
+      } else { container.innerHTML += htmlactive; }
+    });
+  })
+}
+setTimeout(availDoc, 1000)
+
+function myappointment(data) {
+  if (localStorage.getItem('myappointment') === null) {
+    localStorage.setItem('myappointment', JSON.stringify({app1: data}));
+    let app = JSON.parse(localStorage.getItem('myappointment'));
+    renderAppo(app);
+  } else {
+    let app = JSON.parse(localStorage.getItem('myappointment'));
+    let newapp = `app${Object.keys(app).length + 1}`;
+    // let appo = JSON.parse(app, (key, value) => {return value;})
+    app[newapp] = data;
+    localStorage.setItem('myappointment', JSON.stringify(app));
+    renderAppo(app);
+  }
+}
+
+let myapp = {name: "konijio", phno: '90', dr: 'Dr Md Husni Mubarak Akand', date: '19/09/2023', status: 'Confirmed', addinfo: 'xyz'};
+
+// myappointment(myapp);
+
+function renderAppo(info) {
+  for (const key in info) {
+    if (info.hasOwnProperty(key)) {
+      value = info[key];
+      console.log(value);
+      let html = `<div class="box">
+      <h3 class="name">${value.name}</h3>
+      <p class="number">${value.number}</p>
+      <p class="dr-name">${value.doctor}</p>
+      <p class="add-info"><span>Add. Info: </span>${value.otherInfo}</p>
+      <p class="app-status">Status: <span class="stat">Confirmed</span></p>
+      <p class="app-date">Date: <span>${value.date}</span></p>
+      <!-- ---- active class in stat makes it red-----  -->
+    </div>`
+    document.getElementById('my-appo').innerHTML += html; 
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 
 

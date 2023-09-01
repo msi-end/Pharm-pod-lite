@@ -113,15 +113,15 @@
         <div class="horizontal-scroll">
           <div class="active-container">
 
-            <div class="avail-circle">
-              <div class="image active">
+            <!-- <div class="avail-circle">
+              <div class="image inactive">
                 <img src="/static/img/doctors/about-img.jpg" alt="Doctor" class="" />
               </div>
               <p class="small">Dr Upasona Saharia</p>
-              <p class="small active">
-                <span class="dot active"></span><span>Available</span>
+              <p class="small">
+                <span class="dot inactive"></span><span class="swal inactive">Available</span>
               </p>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -382,22 +382,7 @@
             <span id="avai">*Check availability</span>
             <select name="regnDoctor" id="regnDoctor" required>
               <option value="SelectDoctor">Select a Doctor</option>
-              <!-- <option value="Upasona Saharia ">Dr. Upasona Saharia </option>
-              <option value=" Dr. Ankur Bhattacharya "> Dr. Ankur Bhattacharya </option>
-              <option value="Bhaskar Jyoti Pegu ">Dr. Bhaskar Jyoti Pegu </option>
-              <option value="Rosely Timungpi ">Dr. Rosely Timungpi</option>
-              <option value="Md. Husni Mubarak Akand ">Dr. Md. Husni Mubarak Akand</option>
-              <option value="Kalyan Borah "> Dr. Kalyan Borah </option>
-              <option value="Robertson Timung">Dr. Robertson Timung</option>
-              <option value="Ziaul Haque ">Dr. Ziaul Haque </option>
-              <option value="Kamal Hassan ">Dr. Kamal Hassan </option>
-              <option value="Aditya Gautam">Dr. Aditya Gautam</option>
-              <option value="Abhishek Agarwal">Dr. Abhishek Agarwal</option> -->
-              <!-- <option value="Asit Roy">Dr. Asit Roy</option>
-              <option value="Subham Purkayastha">Dr. Subham Purkayastha</option>
-              <option value="Manoj Kumar Behra">Dr. Manoj Kumar Behra</option> -->
-
-            </select>
+             </select>
           </div>
           <div class="input-box flexBox">
             <input type="checkbox" name="checkMe" id="checkMe" checked required>
@@ -409,7 +394,7 @@
         </div>
       </form>
     </main>
-  </section>
+  </section> 
   <!-- ======APPPOINTMENT FORM SECTION ENDS HERE========= -->
 
   <section class="review-fill posfix">
@@ -424,7 +409,7 @@
         <label for="4" class="uis uis-star" id="star" data-val="4"></label>
 
         <input type="radio" name="rate" value="3" id="3">
-        <label for="3" class="uis uis-star" id="star " data-val="3"></label>
+        <label for="3" class="uis uis-star" id="star" data-val="3"></label>
 
         <input type="radio" name="rate" value="2" id="2">
         <label for="2" class="uis uis-star" id="star" data-val="2"></label>
@@ -475,19 +460,11 @@
   <!-- ========ALERT CONTAINER ENDS HERE============ -->
 
   <section class=" customer-app-container posfix">
-    <main class="app-container inner-posfix">
+    <main class="app-container inner-posfix" id="my-appo">
       <p class="title-heading">My appointments</p>
       <p class="err-msg"></p>
       <button class="close-btn" onclick="closemyapp()">&times;</button>
-      <div class="box">
-        <h3 class="name">Kankan Jyoti Nath</h3>
-        <p class="number">6002649802</p>
-        <p class="dr-name">Dr Md Husni Mubarak Akand</p>
-        <p class="add-info"><span>Add. Info: </span>Haga Tan hoise</p>
-        <p class="app-status">Status: <span class="stat">Confirmed</span></p>
-        <p class="app-date">Date: <span>19/09/2023</span></p>
-        <!-- ---- active class in stat makes it red-----  -->
-      </div>
+       
     </main>
   </section>
 

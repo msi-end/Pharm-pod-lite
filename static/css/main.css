@@ -263,7 +263,7 @@ header .dot.active {
 
 .horizontal-scroll {
     width: 700px;
-    height: 120px;
+    height: 130px;
     border: var(--border-1);
     border-radius: var(--border-radius-1);
     display: flex;
@@ -286,7 +286,9 @@ header .dot.active {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: relative
+    position: relative;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
 }
 
 .image {
@@ -304,7 +306,7 @@ header .dot.active {
     border-radius: 50%
 }
 
-.avail-circle p.active {
+.avail-circle .swal.active {
     color: var(--indicator)
 }
 
@@ -316,7 +318,7 @@ header .dot.active {
     background: var(--gradient-0)
 }
 
-.avail-circle p.inactive {
+.avail-circle .swal.inactive {
     color: var(--wrong)
 }
 
