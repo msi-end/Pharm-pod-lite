@@ -131,8 +131,13 @@ function dSplit(val, p, t) { let [d, m, y] = val.split(p); return t ? `${y}/${m}
 
 const userReq = {
   FormSet: function (data) {
+    document.querySelector(`#circleLoad`).style.display = `block`;
+    document.querySelector(`#text`).innerHTML = '';
     ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
-      if (dat.status) { correctAlert(); myappointment(data) } else { wrongAlert(); }
+      if (dat.status) { 
+        document.querySelector(`#circleLoad`).style.display = `none`
+        document.querySelector(`#text`).innerHTML = 'Book Appointment';
+        correctAlert(); myappointment(data) } else { wrongAlert(); }
     })
   },
   CheckDoc: function () {
@@ -171,7 +176,6 @@ function fixApp() {
   console.log(dataform)
   let ap_date = dSplit(doc[2].childNodes[3].value, '-', true)
   let data = { name: doc[0].childNodes[3].value, number: doc[1].childNodes[3].value, doctor: dataform.childNodes[2].value, date: ap_date, otherInfo: doc[3].childNodes[3].value };
-  // console.log(dataform.childNodes[5].value);
   userReq.FormSet(data);
 }
 function correctAlert() {
@@ -184,6 +188,7 @@ function wrongAlert() {
   document.querySelector(`#singu`).style.display = 'none';
   document.querySelector(`#leuy`).textContent = `Appointment is not Confirmed`;
   document.querySelector(`#aneo`).style.display = 'block';
+  document.querySelector(`#hula`).style.display = `none`;
   document.querySelector(`.form-section`).style.display = `none`;
 }
 

@@ -733,6 +733,7 @@ label {
     border: 5px solid #fff;
     border-top-color: #333;
     animation: rotate 1s infinite;
+    display: none;
 }
 #loader {
     position: absolute;
