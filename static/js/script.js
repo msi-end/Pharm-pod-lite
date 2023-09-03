@@ -136,6 +136,7 @@ const userReq = {
     })
   },
   CheckDoc: function () {
+    document.querySelector(`#loader`).style.display = `block`;
     let input_date = dSplit(document.getElementById('formDate').value, '-', true);
     ReqHandler.GET(ReqURI.GetDoc + 'BreatheWellness').then((e) => {
       let docCtn = document.getElementById('regnDoctor')
@@ -149,9 +150,12 @@ const userReq = {
             docCtn.innerHTML += `<option value="${e.data[i].d_name}">Dr. ${e.data[i].d_name}</option>`
           }
         }
-
+        document.querySelector(`#loader`).style.display = `none`;
+        
       } else { console.log('Get doc ,() not working') }
     })
+    
+
   }
 }
 
@@ -163,9 +167,10 @@ function proceed_bej() {
 }
 
 function fixApp() {
-  let dataform = document.querySelector('.form-second').childNodes[1];
+  let dataform = document.querySelector('.form-second').childNodes[3];
+  console.log(dataform)
   let ap_date = dSplit(doc[2].childNodes[3].value, '-', true)
-  let data = { name: doc[0].childNodes[3].value, number: doc[1].childNodes[3].value, doctor: dataform.childNodes[5].value, date: ap_date, otherInfo: doc[3].childNodes[3].value };
+  let data = { name: doc[0].childNodes[3].value, number: doc[1].childNodes[3].value, doctor: dataform.childNodes[2].value, date: ap_date, otherInfo: doc[3].childNodes[3].value };
   // console.log(dataform.childNodes[5].value);
   userReq.FormSet(data);
 }
