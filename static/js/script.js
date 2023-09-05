@@ -244,10 +244,6 @@ function myappointment(data) {
   }
 }
 
-let myapp = {name: "konijio", phno: '90', dr: 'Dr Md Husni Mubarak Akand', date: '19/09/2023', status: 'Confirmed', addinfo: 'xyz'};
-
-// myappointment(myapp);
-
 function renderAppo(info) {
   for (const key in info) {
     if (info.hasOwnProperty(key)) {
