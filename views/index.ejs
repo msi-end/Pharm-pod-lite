@@ -1,3 +1,4 @@
+<<<<<<< HEAD:views/index.ejs
 <!DOCTYPE html>
 <html lang="en">
 
@@ -489,4 +490,501 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breathe</title>
+  <!-- ===CSS=== -->
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <!-- ==Icons CSS=== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+  <link rel="icon" href="/static/img/logo.png" />
+</head>
+
+<body>
+  <header class="flexBox">
+    <div class="logo flexBox">
+      <img src="/static/img/logo.png" alt="logo" />
+      <h4>breathe</h4>
+    </div>
+    <div class="header-button flexBox">
+      <button class="btn butn" onclick="openmyapp()">
+        <i class="uil uil-bag"></i>
+        <span class="btn-app">My Appointments</span>
+        <span class="dot active"></span>
+
+      </button>
+      <button class="btn btn-1" onclick="openForm()">
+        <i class="uil uil-clipboard-notes"></i>
+        <span>Book Appointment</span>
+      </button>
+      <button class="btn btn-2" onclick="window.open('tel:+91 9864885196')">
+        <i class="uil uil-phone"></i> <span>Call Now</span>
+      </button>
+    </div>
+  </header>
+  <!-- ===HEADER ENDS==== -->
+  <div id="image-scroller">
+    <h2 id="title-name">breathe wellness centre</h2>
+    <div class="carousel">
+      <img src="/static/img/slider/slider-1.jpg" alt="slider" />
+    </div>
+    <div class="carousel">
+      <img src="/static/img/slider/slider-2.jpg" alt="slider" />
+    </div>
+    <div class="carousel">
+      <img src="/static/img/slider/slider-3.jpg" alt="slider" />
+    </div>
+  </div>
+  <!-- ===IMAGE SECTION ENDS HERE=== -->
+  <section id="main-section" class="wigin flexBox">
+    <div class="main-title-section">
+      <p class="title" id="heading">
+        breathe wellness centre
+        <span id="title-stars">4.6&#9733;</span>
+        <span id="title-rating">(200&plus; Ratings)</span>
+      </p>
+      <p>
+        <i class="uil uil-medical-square-full"></i>
+        Multi & Superspeciality clinic
+      </p>
+      <p>
+        <i class="uil uil-map-marker-plus"></i>
+        <a href="https://goo.gl/maps/Eb65fbGEEBfviu7v7">Samadar Patty, Near ADP bridge, Nagaon, Assam 782002</a>
+      </p>
+      <p class="in-fl">
+        <span><i class="uil uil-check-circle"></i><span class="weight">13</span> Doctors</span>
+        <span><i class="uil uil-check-circle"></i><span class="weight">&#8377;350</span> at clinic </span>
+        <span class="small">*minimum</span>
+      </p>
+      <div class="main-title-button flexBox">
+        <button class="btn" id="bookAppo" onclick="openForm()">
+          <i class="uil uil-clipboard-notes"></i>Book Appointment
+        </button>
+        <button class="btn flexBox" id="call-now" onclick="window.open('tel:+91 9864885196')">
+          <i class="uil uil-phone"></i> <span>Call Now</span>
+        </button>
+      </div>
+    </div>
+    <div class="main-timing-section">
+      <p class="title">clinic timings</p>
+      <div class="weekDays flexBox">
+        <ul class="weight">
+          <li>Sunday</li>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wednesday</li>
+          <li>Thursday</li>
+          <li>Friday</li>
+          <li>Saturday</li>
+        </ul>
+        <ul>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+          <li>09:00 AM - 10:00 PM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- MAIN SECTION ENDS HERE -->
+
+  <section id="grid-section" class="wigin">
+    <div class="grid-items first-section">
+      <p class="title">DOCTORS IN THE CLINIC</p>
+      <main class="avail-doc-section">
+        <p class="title-heading">Available doctors</p>
+        <!-- ======================================= -->
+        <div class="horizontal-scroll">
+          <div class="active-container">
+
+            <!-- <div class="avail-circle">
+              <div class="image inactive">
+                <img src="/static/img/doctors/about-img.jpg" alt="Doctor" class="" />
+              </div>
+              <p class="small">Dr Upasona Saharia</p>
+              <p class="small">
+                <span class="dot inactive"></span><span class="swal inactive">Available</span>
+              </p>
+            </div> -->
+
+          </div>
+        </div>
+        <!-- ---------------- -->
+      </main>
+      <hr>
+
+      <main class="select-doc-section">
+        <div class="flexBox">
+          <p class="title-heading">doctor's information</p>
+          <select name="doctors" id="doctors" onchange="getValu()">
+            <option value="SelectDoctor">Select a Doctor</option>
+            <option value="0">Dr. Upasona Saharia </option>
+            <option value="1"> Dr. Ankur Bhattacharya </option>
+            <option value="2">Dr. Bhaskar Jyoti Pegu </option>
+            <option value="3">Dr. Rosely Timungpi</option>
+            <option value="4">Dr. Husni Mubarak Akand</option>
+            <option value="5"> Dr. Kalyan Borah </option>
+            <option value="6">Dr. Robertson Timung</option>
+            <option value="7">Dr. Ziaul Haque </option>
+            <option value="8">Dr. Kamal Hassan </option>
+            <option value="9">Dr. Aditya Gautam</option>
+            <option value="10">Dr. Abhishek Agarwal</option>
+            <!-- <option value="10">Dr. Asit Roy</option>
+            <option value="11">Dr. Subham Purkayastha</option>
+            <option value="12">Dr. Manoj Kumar Behra</option> -->
+          </select>
+        </div>
+        <div class="inner-doc-container">
+          <div class="content-container-doc">
+            <p id="dname"></p>
+            <p>
+              <i class="uil uil-university"></i>
+              <span id="ddeg"></span>
+            </p>
+            <p>
+              <i class="uil uil-user-md"></i>
+              <span id="dspec"></span>
+            </p>
+            <p>
+
+              <span id="dexp"></span>
+            </p>
+            <p>
+              <i class="uil uil-language"></i>
+              <span id="dlang"></span>
+            </p>
+            <p>
+              <i class="uil uil-book"></i>
+              <span id="drat"><span class="we-ra"></span> per visit</span>
+            </p>
+          </div>
+          <div class="image-container-doc">
+            <img alt="doctor" id="doc-img">
+            <p class="tiny">
+              <i class="uil uil-award"></i>
+              <span>Certification verified</span>
+            </p>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <main class="timing-doc-section">
+        <p class="title-heading">timings</p>
+        <div class="weekDays flexBox">
+          <ul>
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+            <li>Saturday</li>
+            <li>Sunday</li>
+          </ul>
+          <ul>
+            <li class="doc-mon"></li>
+            <li class="doc-tue"></li>
+            <li class="doc-wed"></li>
+            <li class="doc-thu"></li>
+            <li class="doc-fri"></li>
+            <li class="doc-sat"></li>
+            <li class="doc-sun"></li>
+          </ul>
+        </div>
+      </main>
+      <hr>
+      <main class="about-doc-section">
+        <p class="title-heading">about the doctor</p>
+        <div class="details">
+          <p id="aboutsum"></p>
+          <span class="detailsText" id="blog"></span>
+          <a class="detailsMore-btn">Know More....</a>
+        </div>
+      </main>
+      <hr>
+      <main class="video-doc-section">
+        <p class="title-heading">Doctor's Instructions</p>
+        <div class="video-content-desc flexBox" id="dvid">
+          <iframe src="https://www.youtube.com/embed/GVRDGQhoEYQ" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <p class="sarang" id="sarang"><span id="bold"> How to Optimize Female Hormone Health for Vitality &
+              Longevity</span>
+            For a woman in her teens who's already hit puberty, what sorts of biomarkers should those young women be
+            paying attention to? During teenage years, monitor: Cortisol,The ratio of estrogen and
+            progesterone
+            <a href="https://www.podcastrecap.org/dr-sara-gottfried-how-to-optimize-female-hormone-health-for-vitality-long-huberman-lab-podcast/"
+              class="know">Know more&rarr;</a>
+          </p>
+        </div>
+      </main>
+    </div>
+    <div class="second-section">
+      <main class="location-clinic-section">
+        <p class="title">location</p>
+        <p>
+          <i class="uil uil-map-marker-plus"></i>
+          <a href="https://goo.gl/maps/Eb65fbGEEBfviu7v7">
+            Samadar Patty, Near ADP bridge, Nagaon, Assam 782002
+          </a>
+        </p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d626.3487267511205!2d92.67965696794312!3d26.349607333128336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374527aadae64e83%3A0x98393c4de46b48e5!2sBreathe%20Wellness%20Centre!5e0!3m2!1sen!2sin!4v1692010163986!5m2!1sen!2sin"
+          style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </main>
+
+      <main class="services-section">
+        <p class="title-heading">services offered</p>
+        <div class="services-container">
+          <ul class="service-list">
+            <li class="flexBox">
+              <span>Orthopaedics</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Dermatology</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Diabetologist</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Neuropsychiatry</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Gynecologist</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Obstetrician</span> <a class="view">View More</a>
+            </li>
+            <hr>
+            <li class="flexBox">
+              <span>Urology</span> <a class="view">View More</a>
+            </li>
+            <hr>
+          </ul>
+        </div>
+      </main>
+
+      <main class="article-outer">
+        <ul class="flexBox">
+          <li class="title-heading"><a href="/p/health-tips" class="active">Articles</a></li>
+          <li class="title-heading"><a href="/p/health-tips">Blogs</a></li>
+          <li class="title-heading"><a href="/p/health-tips">News & Events</a></li>
+        </ul>
+        <div class="article-inner-container">
+          <img src="/static/img/slider/slider-1.jpg" alt="image">
+          <p>Plenty of medical students have questions when they're first starting out like what are all of the
+            physician subspecialties, and what the most common doctor specialty is in your field? But with so many paths
+            to choose from, and so many stops along the way, there might be times you need to know even more.</p>
+          <a href="/p/health-tips" class="know">Know More &rarr;</a>
+        </div>
+      </main>
+    </div>
+  </section>
+  <!-- ===GRID SECTION ENDS HERE=== -->
+
+  <section id="gallery-section" class="wigin">
+    <div class="gallery-title-section flexBox">
+      <p class="title">gallery</p>
+      <button class="btn" onclick="window.location.href='/views/gallery.html';">View All</button>
+    </div>
+    <hr>
+    <main class="gallery-container flexBox">
+      <img src="/static/img/slider/slider-1.jpg" alt="">
+      <img src="/static/img/slider/slider-2.jpg" alt="">
+      <img src="/static/img/slider/slider-3.jpg" alt="">
+      <img src="/static/img/slider/slider-1.jpg" alt="">
+      <img src="/static/img/slider/slider-2.jpg" alt="">
+    </main>
+  </section>
+  <!-- =====GALLERY SECTION ENDS HERE======== -->
+  <section id="review-section" class="wigin">
+    <main class="re-view first-rev-section">
+      <p class="title">Review this clinic</p>
+      <hr>
+      <button class="btn" onclick="openReview()">Write a review&rarr;</button>
+      <hr>
+      <div class="first-ad">
+        <img src="/static/img/ai-7685883.png" alt="ad">
+        <span>Ad</span>
+      </div>
+    </main>
+    <main class="re-view second-rev-section">
+      <p class="title">testimonials</p>
+      <hr>
+      <div class="review-inner-section">
+        <div id="review">
+
+        </div>
+      </div>
+    </main>
+  </section>
+  <!-- =====REVIEW SECTION ENDS HERE======== -->
+
+  <footer>
+    <main class="flexBox">
+      <div class="first-footer">
+        <p class="title">breathe wellness centre</p>
+        <p>Nurturing Health, Elevating Life: Breathe Wellness Centre - Your Multi-Specialty Haven</p>
+      </div>
+      <div class="footer-icons">
+        <p class="title-heading">Social Media links</p>
+        <ul class="flexBox">
+          <li><a href="#"><i class="uil uil-whatsapp"></i></a></li>
+          <li><a href="#"><i class="uil uil-instagram"></i></a></li>
+          <li><a href="#"><i class="uil uil-facebook-f"></i></a></li>
+          <li><a href="#"><i class="uil uil-youtube"></i></a></li>
+          <li> <a href="#"><i class="uil uil-twitter"></i></a></li>
+        </ul>
+      </div>
+    </main>
+  </footer>
+  <main class="copy">
+    All rights reserved &nbsp;&nbsp;&nbsp;&nbsp&copy; <a href="https://cipmedic.com/">Cipmedic</a> @2023
+  </main>
+
+  <!-- =====FOOTER ENDS HERE======= -->
+
+  <section class="form-section posfix">
+    <main class="form-container inner-posfix">
+      <p class="title">appointment form</p>
+      <button class="close-btn" onclick="closeForm()">&times;</button>
+      <button class="arrow-btn uil uil-arrow-left" onclick="backForm()"></button>
+      <p id="err-msg" class="err-msg"></p>
+      <form method="post">
+        <div class="form-first">
+          <div class="input-box">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="input-box">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="number" id="number" required>
+          </div>
+          <div class="input-box">
+            <label for="date">Date:</label>
+            <input id="formDate" type="date" onchange="userReq.CheckDoc()" data-min="0" data-max="6" name="date"
+              required>
+          </div>
+          <div class="input-box">
+            <label for="additional-info">Additional Information (optional):</label>
+            <input type="text" placeholder="Enter about any query" name="info" id="info">
+          </div>
+          <button type="button" class="book-btn" onclick="proceed_bej(),userReq.CheckDoc()">Select Doctors</button>
+        </div>
+        <div class="form-second">
+          <div id="loader"></div>
+          <div class="input-box">
+            <label for="appointment-type">Select your doctor:</label>
+            <span id="avai">*Check availability</span>
+            <select name="regnDoctor" id="regnDoctor" required>
+              <option value="SelectDoctor">Select a Doctor</option>
+             </select>
+          </div>
+          <div class="input-box flexBox">
+            <input type="checkbox" name="checkMe" id="checkMe" checked required>
+            <p>I agree to the <a href="#">terms and condtions</a></p>
+          </div>
+          <div class="input-box flexBox">
+            <button type="button" class="book-btn" onclick="fixApp()"><span id="text">Book Appointment</span> <span id="circleLoad"></span></button>
+          </div>
+        </div>
+      </form>
+    </main>
+  </section> 
+  <!-- ======APPPOINTMENT FORM SECTION ENDS HERE========= -->
+
+  <section class="review-fill posfix">
+    <main class="review-fill-container inner-posfix">
+      <p class="title-heading">Rate & review</p>
+      <button class="close-btn" onclick="closeReviewfill()">&times;</button>
+      <div class="review-stars-fill">
+        <input type="radio" name="rate" value="5" id="5">
+        <label for="5" class="uis uis-star" id="star" data-val="5"></label>
+
+        <input type="radio" name="rate" value="4" id="4">
+        <label for="4" class="uis uis-star" id="star" data-val="4"></label>
+
+        <input type="radio" name="rate" value="3" id="3">
+        <label for="3" class="uis uis-star" id="star" data-val="3"></label>
+
+        <input type="radio" name="rate" value="2" id="2">
+        <label for="2" class="uis uis-star" id="star" data-val="2"></label>
+
+        <input type="radio" name="rate" value="1" id="1">
+        <label for="1" class="uis uis-star" id="star" data-val="1"></label>
+      </div>
+      <textarea name="ReviewText" id="cus-review" placeholder="Write your review"></textarea>
+      <button type="submit" class="book-btn" onclick="openRevieweEnd()">Save</button>
+    </main>
+  </section>
+
+  <!-- =====REVIEW FILL SECTION ENDS HERE======= -->
+
+  <section class="review-form-end-section posfix">
+    <main class="review-form-end-container inner-posfix">
+      <p class="err-msg" id="err-Msg"></p>
+      <button class="close-btn" onclick="closeReviewEnd()">&times;</button>
+      <div class="input-box">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-box">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="number" id="number" required>
+      </div>
+      <button type="submit" class="book-btn" id="submit-review">Submit</button>
+    </main>
+  </section>
+
+  <!-- ======REVIEW FORM END SECTION ends here======= -->
+
+  <section class="alert-container posfix">
+    <main class="alert-inner-container inner-posfix">
+      <div class="icon-uil">
+        <span class="uil uil-check-circle" id="singu"></span>
+        <span class="uil uil-times-circle" id="samoa"></span>
+      </div>
+      <h3 id="leuy">Booking Confirmed</h3>
+      <p id="hula">Our Team shall contact you for confirmation</p>
+      <p id="aneo">*Appointment slot is not available for this particular date</p>
+      <div class="flexBox">
+        <button class="btn" onclick="closeAlert()">okay</button>
+        <button class="btn brten" onclick="openmyapp()">my appoinments</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========ALERT CONTAINER ENDS HERE============ -->
+
+  <section class=" customer-app-container posfix">
+    <main class="app-container inner-posfix" id="my-appo">
+      <p class="title-heading">My appointments</p>
+      <p class="err-msg"></p>
+      <button class="close-btn" onclick="closemyapp()">&times;</button>
+       
+    </main>
+  </section>
+
+  <!-- =============CUSTOMER APP CONTAINER ENDS HERE============== -->
+  <!-- ===JAVASCRIPT== -->
+  <script defer src="/static/js/main.js"></script>
+  <script defer src="/static/js/script.js"></script>
+  <script defer src="/static/js/mainDoc.js"></script>
+
+</body>
+
+>>>>>>> a110ccef4975ca15dc1e49f6c24b64e278fe3796:views/index.html
 </html>

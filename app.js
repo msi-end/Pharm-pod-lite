@@ -37,6 +37,10 @@ app.get('/', (req, res) => {
    
 });
 app.get('*', (req, res) => {
+<<<<<<< HEAD
     res.status(404).sendFile(path.join(__dirname, 'views/gallery.html'))
+=======
+    res.status(404).sendFile(path.join(__dirname, '/views/error.html'))
+>>>>>>> a110ccef4975ca15dc1e49f6c24b64e278fe3796
 })
 app.listen(PORT, () => { console.log('working on port 3001'); })
