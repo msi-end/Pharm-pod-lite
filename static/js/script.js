@@ -131,8 +131,13 @@ function dSplit(val, p, t) { let [d, m, y] = val.split(p); return t ? `${y}/${m}
 
 const userReq = {
   FormSet: function (data) {
+    document.getElementById('circleLoad').style.display = `block`
+    document.getElementById('text').innerHTML = '';
     ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
-      if (dat.status) { correctAlert(); myappointment(data) } else { wrongAlert(); }
+      if (dat.status) {
+         document.getElementById('circleLoad').style.display = `none`
+         document.getElementById('text').innerHTML = 'Book Appoinment';
+         correctAlert(); myappointment(data) } else { wrongAlert(); }
     })
   },
   CheckDoc: function () {

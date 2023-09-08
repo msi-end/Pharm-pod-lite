@@ -723,6 +723,9 @@ label {
 .book-btn:hover{
     background: var(--light-indicator);
 }
+.hide{
+    display: none;
+}
 #circleLoad{
     position: absolute;
     left: 45%;
@@ -733,6 +736,7 @@ label {
     border: 5px solid #fff;
     border-top-color: #333;
     animation: rotate 1s infinite;
+    display: none;
 }
 #loader {
     position: absolute;
