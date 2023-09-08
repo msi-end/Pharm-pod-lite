@@ -131,6 +131,15 @@ function dSplit(val, p, t) { let [d, m, y] = val.split(p); return t ? `${y}/${m}
 
 const userReq = {
   FormSet: function (data) {
+<<<<<<< HEAD
+    document.getElementById('circleLoad').style.display = `block`
+    document.getElementById('text').innerHTML = '';
+    ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
+      if (dat.status) {
+         document.getElementById('circleLoad').style.display = `none`
+         document.getElementById('text').innerHTML = 'Book Appoinment';
+         correctAlert(); myappointment(data) } else { wrongAlert(); }
+=======
     document.querySelector(`#circleLoad`).style.display = `block`;
     document.querySelector(`#text`).innerHTML = '';
     ReqHandler.POST(ReqURI.FormSet + 'BreatheWellness', data).then((dat) => {
@@ -138,6 +147,7 @@ const userReq = {
         document.querySelector(`#circleLoad`).style.display = `none`
         document.querySelector(`#text`).innerHTML = 'Book Appointment';
         correctAlert(); myappointment(data) } else { wrongAlert(); }
+>>>>>>> a110ccef4975ca15dc1e49f6c24b64e278fe3796
     })
   },
   CheckDoc: function () {
