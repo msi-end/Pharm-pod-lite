@@ -35,11 +35,12 @@ app.use(
 //         console.log(result);
 //      })
 // });
+
+//remove this get '/'
 app.get('/', (req, res) => {
-
     res.status(200).sendFile(path.join(__dirname, '/views/index.html'))
-
 });
+
 app.get('*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, '/views/error.html'))
 })
