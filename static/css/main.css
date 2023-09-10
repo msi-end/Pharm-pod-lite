@@ -818,7 +818,7 @@ label {
 
 }
 
-.review-form-end-container :is(input[type="text"], input[type="tel"]) {
+.review-form-end-container :is(input[type="text"], input[type="email"]) {
     width: 100%;
     padding: 8px 10px;
     margin-bottom: .5rem;
@@ -1129,10 +1129,8 @@ footer ul li:nth-child(5) a {
         border-bottom: var(--border-2);
         border-right: none
     }
-    #gallery-section img{
-        width: 75px;
-    }
-    #gallery-box img{
-        width: 100px;
-    }
+}
+
+@media (max-width: 385px){
+    
 }

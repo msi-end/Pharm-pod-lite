@@ -74,6 +74,11 @@ function openRevieweEnd(){
 function closeAlert(){
   document.querySelector(`.alert-container`).style.display = `none`;
 }
+setTimeout(_ => {
+  const elem = document.createElement('script');
+  elem.src = '/static/js/youtube-embed.js';
+  document.head.append(elem);
+}, 5000);
 //MY APPOINTMENTS
 function openmyapp(){
   document.querySelector(`.customer-app-container`).style.display = `block`;
