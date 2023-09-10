@@ -26,15 +26,17 @@ callNow.addEventListener("click", () => {
   callNow.classList.toggle(`active`);
 });
 // ABout Know More Text 
-const detailContainer = document.querySelector('.details');
-detailContainer.addEventListener('click', event=>{
-  const detail = event.target;
-  const isDetailsmoreBtn = detail.className.includes('detailsMore-btn');
-  if(!isDetailsmoreBtn) return;
-  const detailText = event.target.parentNode.querySelector('.detailsText');
-  detailText.classList.toggle('detailsText--show');
-  detail.textContent = detail.textContent.includes('Know More') ?
-  "Know Less...." : "Know More...."  
+const detailContainer = document.querySelectorAll('.details');
+detailContainer.forEach((el)=>{
+  el.addEventListener('click', event=>{
+    const detail = event.target;
+    const isDetailsmoreBtn = detail.className.includes('detailsMore-btn');
+    if(!isDetailsmoreBtn) return;
+    const detailText = event.target.parentNode.querySelector('.detailsText');
+    detailText.classList.toggle('detailsText--show');
+    detail.textContent = detail.textContent.includes('Know More') ?
+    "Know Less...." : "Know More...."  
+  })
 })
 
 //APPOINTMENT FORM
@@ -77,3 +79,22 @@ setTimeout(_ => {
   elem.src = '/static/js/youtube-embed.js';
   document.head.append(elem);
 }, 5000);
+//MY APPOINTMENTS
+function openmyapp(){
+  document.querySelector(`.customer-app-container`).style.display = `block`;
+}
+
+function closemyapp(){
+  document.querySelector(`.customer-app-container`).style.display = 'none';
+}
+
+const docdyid = document.getElementById('docprofdata').dataset.idid;
+function showdoctor(id) {document.querySelectorAll('.doc-prof-ver').forEach((el)=>{
+    if (el.dataset.docid == id) {document.querySelectorAll('.doc-prof').forEach((el)=>{el.classList.add('hide')})
+      document.querySelectorAll(`.doc-prof-${el.dataset.docid}`).forEach((el)=>{el.classList.remove('hide')})
+    }})}
+showdoctor(docdyid);
+
+function getValu() {const docid = document.getElementById('doctors').value;
+  document.getElementById('docprofdata').dataset.idid = docdyid;
+  showdoctor(docid);}
