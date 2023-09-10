@@ -268,7 +268,7 @@ header .butn {
 
 .horizontal-scroll {
     width: 700px;
-    height: 120px;
+    height: 130px;
     border: var(--border-1);
     border-radius: var(--border-radius-1);
     display: flex;
@@ -291,7 +291,9 @@ header .butn {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: relative
+    position: relative;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
 }
 
 .image {
@@ -309,7 +311,7 @@ header .butn {
     border-radius: 50%
 }
 
-.avail-circle p.active {
+.avail-circle .swal.active {
     color: var(--indicator)
 }
 
@@ -321,7 +323,7 @@ header .butn {
     background: var(--gradient-0)
 }
 
-.avail-circle p.inactive {
+.avail-circle .swal.inactive {
     color: var(--wrong)
 }
 
@@ -782,7 +784,7 @@ label {
 
 }
 
-.review-form-end-container :is(input[type="text"], input[type="tel"]) {
+.review-form-end-container :is(input[type="text"], input[type="email"]) {
     width: 100%;
     padding: 8px 10px;
     margin-bottom: .5rem;

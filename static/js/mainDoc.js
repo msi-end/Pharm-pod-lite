@@ -17,11 +17,11 @@ let docImg = document.querySelector(`#doc-img`);
 
 
 const doctor1 = {
-    did: 0, Name: `Dr. Upasona Saharia`, specific: 'Trained in Endogynaecology and minimal access surgery,,<br>Experience in Iris Obstetrics', deg: 'M.B.B.S,DGO,FMAS', exp: '<i class="uil uil-medkit"></i>7 Years of experience',
+    did: 0, Name: `Dr. Upasona Saharia`, specific: 'Trained in Endogynaecology and minimal access surgery,<br>Experience in high risk Obstetrics', deg: 'M.B.B.S,DGO,FMAS', exp: '<i class="uil uil-medkit"></i>7 Years of experience',
     Lang: ['Assamese', 'Hindi', 'English'], price: `&#8377;400/-`, about: ` Dr. Upasona Saharia is a highly skilled and compassionate doctor trained in Endogynaecology and minimal access surgery with diverse qualifications in
  women's health. With an MBBS and specialized DGO, she possesses expertise in Obstetrics and Gynaecology. Her
- commitment to excellence is evident through her recognition as a Fellow of the Academy of Medical Sciences
- (FAMS), reflecting her dedication to staying updated with medical advancements.`, blog: `Dr. Saharia's proficiency in endogynaecology enables
+ commitment to excellence is evident through her recognition as a Fellowship in Minimal Access Surgery
+ (FMAS), reflecting her dedication to staying updated with medical advancements.`, blog: `Dr. Saharia's proficiency in endogynaecology enables
  her to diagnose and treat gynecological conditions using minimally invasive techniques, providing advanced
  and effective care with reduced discomfort and faster recovery.
  Beyond her medical qualifications, Dr. Upasona Saharia is multilingual, fluent in Assamese, Hindi, and
@@ -65,7 +65,7 @@ const doctor5 = {
  Dr. H M Akand is a proficient General Surgeon, holding an MBBS and an MS degree. Fluent in Assamese, Hindi, and English, he ensures clear and effective communication with a diverse patient base. With 9 years of experience, Dr. Akand brings a wealth of surgical expertise to Breathe Wellness Centre.`,
     blog: `His commitment to patient care and well-being is evident through his dedication to providing comprehensive and individualized treatment. Dr. H M Akand's linguistic abilities play a crucial role in establishing trust and facilitating open discussions with patients, allowing for a better understanding of their surgical options and concerns.
 
- At Breathe Wellness Centre, Dr. Akand's skills and compassionate approach contribute to the center's commitment to holistic healthcare. His presence underscores the importance of patient-centric care and expertise, making him an invaluable asset in the field of general surgery.`, Sunday: ` - `, Monday: `05:30 PM`, Tuesday: `03:00 PM`, Wednesday: `03:00 PM`, Thursday: `03:00 PM`, Friday: `03:00 PM`, Saturday: `03:00 PM`,image: `/static/img/doctors/husni.jpg`
+ At Breathe Wellness Centre, Dr. Akand's skills and compassionate approach contribute to the center's commitment to holistic healthcare. His presence underscores the importance of patient-centric care and expertise, making him an invaluable asset in the field of general surgery.`, Sunday: ` - `, Monday: `05:30 PM`, Tuesday: `03:00 PM`, Wednesday: `03:00 PM`, Thursday: `03:00 PM`, Friday: `03:00 PM`, Saturday: `03:00 PM`,image: `/static/img/doctors/md.jpg`
 };
 
 const doctor6 = {
@@ -98,8 +98,8 @@ const doctor9 = {
 
 const doctor10 = {
     did: 9, Name: `Dr. Aditya Gautam`, specific: `Super Specialist Doctor for Diabetes & Endocrinology Problems`, deg: `M.B.B.S, MD(JIPMER), DM,Endocrinology (Amrita Institute, Kochi)`, exp: '<i class="uil uil-medkit"></i>6 Years of experience',
-    Lang: ['Hindi', 'English'], price: `&#8377;800/-`, about: ` 
- Dr. Aditya Gautam is a distinguished Super Specialist Doctor for Diabetes & Endocrinology Problems with extensive qualifications including an M.B.B.S, MD(JIPMER), DM,Endocrinology(Amrita Institute, Kochi). Proficient in Hindi, and English, he ensures clear communication with a diverse patient base. With an impressive 6 years of experience, Dr. Hassan brings profound expertise to his role.   `,
+    Lang: ['Hindi', 'English','Assamese','Tamil','Telegu','Malayalam'], price: `&#8377;800/-`, about: ` 
+ Dr. Aditya Gautam is a distinguished Super Specialist Doctor for Diabetes & Endocrinology Problems with extensive qualifications including an M.B.B.S, MD(JIPMER), DM,Endocrinology(Amrita Institute, Kochi). Proficient in Hindi,English,Assamese, Tamil, Telegu and Malayalam he ensures clear communication with a diverse patient base. With an impressive 6 years of experience, Dr. Gautam brings profound expertise to his role.   `,
     blog: `  His linguistic abilities foster strong doctor-patient relationships, facilitating thorough discussions about urological concerns and treatment options. Dr. Aditya Gautam's contributions to Breathe Wellness Centre underscore his commitment to delivering specialized and patient-centered care, further enhancing these reputable healthcare establishments.`, Sunday: `09:30 AM<p class= "small">(*Visits 1st Sunday of every month)</p> `, Monday: `- `, Tuesday: ` - `, Wednesday: ` - `, Thursday: ` - `, Friday: ` - `, Saturday: ` - `,
     image: `/static/img/doctors/aditya.jpg`
 };
