@@ -1129,8 +1129,10 @@ footer ul li:nth-child(5) a {
         border-bottom: var(--border-2);
         border-right: none
     }
-}
-
-@media (max-width: 385px){
-    
+    #gallery-section img{
+        width: 75px;
+    }
+    #gallery-box img{
+        width: 100px;
+    }
 }

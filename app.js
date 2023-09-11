@@ -29,17 +29,17 @@ app.use(
 
 //new updates
 
-// app.get('/', (req, res) => {
-//     conn.query(`SELECT * FROM cl_doctor`, (err, result) => {
-//         res.status(200).render('index.html', {result})
-//         console.log(result);
-//      })
-// });
+app.get('/', (req, res) => {
+    conn.query(`SELECT * FROM cl_doctor`, (err, result) => {
+        res.status(200).render('index.ejs', {result})
+        console.log(result);
+     })
+});
 
 //remove this get '/'
-app.get('/', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, '/views/index.html'))
-});
+// app.get('/', (req, res) => {
+//     res.status(200).sendFile(path.join(__dirname, '/views/index.ejs'))
+// });
 
 app.get('*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'views/gallery.html'))
